@@ -24,9 +24,9 @@ namespace ParcialJoseMiguelBuritica.DAL
         {
             if (!_context.Tickets.Any())
             {
-                for (int i = 0; i < 50000; i++)
+                for (int t = 0; t < 50000; t++)
                 {
-                    _context.Tickets.Add(new Ticket { UseDate = null, IsUsed = false, EntranceGate = null });
+                    _context.Tickets.Add (new Ticket{ UseDate = null, IsUsed = false, EntranceGate = null});
 
                 }
 

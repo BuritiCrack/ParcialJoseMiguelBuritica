@@ -9,7 +9,7 @@ namespace ParcialJoseMiguelBuritica.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TicketsController : ControllerBase
+    public class TicketsController : Controller
     {
         private readonly DataBaseContext _context;
 
@@ -64,7 +64,7 @@ namespace ParcialJoseMiguelBuritica.Controllers
                     catch (DbUpdateException dbUpdateException)
                     {
                         if (dbUpdateException.InnerException.Message.Contains("duplicate"))
-                            return Conflict("ya existe");
+                           return Conflict("ya existe");
                     }
                     catch (Exception ex)
                     {
@@ -74,7 +74,7 @@ namespace ParcialJoseMiguelBuritica.Controllers
                     return Ok(ticket);
 
                 }
-                return Conflict("La entrada ya se utilizo");
+                return Conflict("Boleta ya usada");
 
             }
 
